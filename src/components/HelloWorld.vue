@@ -1,58 +1,184 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <a class="card" id="card-link" target="_blank">
+      <div class="card__header">
+        <div>
+          <img class="header__img skeleton" id="logo-img" alt="" />
+        </div>
+        <h3 class="card__header header__title" id="card-title">
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text"></div>
+        </h3>
+      </div>
+
+      <div class="card__body">
+        <div class="card__body body__text" id="card-details">
+          <div class="skeleton skeleton-text skeleton-text__body"></div>
+        </div>
+
+        <div class="card__body body__img">
+          <img class="skeleton" alt="" id="cover-img" />
+        </div>
+      </div>
+
+      <div class="card__footer" id="card-footer">
+        <div class="skeleton skeleton-text skeleton-footer"></div>
+      </div>
+    </a>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String,
-  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+.card {
+  background-color: #f5f8fc;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(82, 88, 102, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 330px;
+  height: auto;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  margin: 2rem;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.card__header {
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0.5rem 0 0.5rem 0.5rem;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.card__header .header__img {
+  height: 2rem;
+  width: 2rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }
-a {
-  color: #42b983;
+
+.card__header .header__title {
+  font-size: 1.0625rem;
+  line-height: 1.375rem;
+  color: #0e1217;
+  font-weight: 700;
+  margin: 0.5rem;
+}
+
+.card__body {
+  margin: 0 0.5rem;
+}
+
+.card__body .body__text {
+  color: #525866;
+  font-size: 0.8125rem;
+}
+
+.card__body .body__img {
+  height: 10rem;
+  margin: 0.5rem 0;
+}
+
+.card__body .body__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: auto;
+  border-radius: 0.75rem;
+}
+
+.card__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5rem;
+}
+
+.card:hover {
+  border-color: rgba(82, 88, 102, 0.4);
+}
+
+ion-icon {
+  font-size: 1.5rem;
+  color: #525866;
+  cursor: pointer;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+ion-icon:hover:nth-of-type(1) {
+  color: #15ce5c;
+}
+
+ion-icon:hover:nth-of-type(2) {
+  color: #15ce5c;
+}
+
+ion-icon:hover:nth-of-type(3) {
+  color: #fa6620;
+}
+
+.skeleton {
+  -webkit-animation: skeleton-loading 1s linear infinite alternate;
+          animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@-webkit-keyframes skeleton-loading {
+  0% {
+    background-color: #c2cfd6;
+  }
+  100% {
+    background-color: #f0f3f5;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #c2cfd6;
+  }
+  100% {
+    background-color: #f0f3f5;
+  }
+}
+
+.skeleton-text {
+  width: 100%;
+  height: 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.skeleton-text__body {
+  width: 75%;
+}
+
+.skeleton-footer {
+  width: 30%;
 }
 </style>
